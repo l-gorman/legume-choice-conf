@@ -1,0 +1,12 @@
+[Unit]
+Description=A python daemon run on reboot which will listen for new submissions to the legume choice database.
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/bin/python3 /home/ubuntu/legumeCHOICE/data-processing/daemon.py
+WorkingDirectory=/home/ubuntu/legumeCHOICE/data-processing
+User=ubuntu
+[Install]
+WantedBy=multi-user.target
